@@ -47,4 +47,4 @@ def processSources(sourceLists):
     return sourcesResults
 
 def getArticles():
-    pass 
+    pass
