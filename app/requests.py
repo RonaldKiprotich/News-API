@@ -5,7 +5,7 @@ api_key = None
 source_url = None
 article_url = None
 
-def configRequest(app):
+def configure_request(app):
     global api_key,source_url,article_url
     api_key = app.config['NEWS_API_KEY']
     source_url = app.config['NEWS_API_SOURCE_URL']
