@@ -1,0 +1,13 @@
+
+{% macro displayArticlesList(articles_list) %}
+    {%for articles in articles_list %}
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 articles-card">
+        <img src="{{ articles.urlToImage }}" alt="{{ articles.title }} poster" class="img-responsive">
+        <li class="text-center">
+            <a href="/articles/{{articles.id}}" target="_blank" >
+              {{ articles.description|truncate(10)}}
+            </a>
+        </li>
+    </div>
+        {% endfor %}
+{% endmacro %}

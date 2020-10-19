@@ -5,7 +5,7 @@ from . import main
 
 @main.route('/')
 def index():
-
+    
     business = getSources('business')
 
     title = 'Home, News Highlights'
