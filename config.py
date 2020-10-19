@@ -10,3 +10,11 @@ NEWS_API_KEY = os.environ.get('MOVIE_API_KEY')
 
 class Prodconfig(Config):
     pass
+
+class DevConfig(Config):
+    DEBUG = True
+
+configOptions = {
+    'development':DevConfig,
+    'production':ProdConfig
+}   
