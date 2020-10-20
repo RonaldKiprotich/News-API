@@ -43,7 +43,11 @@ Users can do the following with this App
 
 
 ## LICENSE
+* 
+### License
+
+* LICENSED UNDER  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license/MIT)
 * Copyright (c) || 2020 [Ronald Kiprotich](https://github.com/RonaldKiprotich)
-* MIT License
+
 
 
