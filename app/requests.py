@@ -12,7 +12,6 @@ def configure_request(app):
     global api_key,source_url,article_url, base_article_url,base_url
     api_key = app.config['NEWS_API_KEY']
     source_url = app.config['NEWS_API_SOURCE_URL']
-    # base_url = app.config ["NEWS_API_BASE_URL"]
     base_article_url = app.config["ARTICLES_API_BASE_URL"]
 
 
@@ -84,20 +83,3 @@ def process_articles_results(articles_list):
             articles_results.append(article_object)
 
     return articles_results
-
-
-def search_artciles(articles_name):
-    
-    search_articles_url = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey={}'.format(api_key,articles_name)
-    with urllib.request.urlopen(search_articles_url) as url:
-        search_articles_data = url.read()
-        search_articles_response = json.loads(search_articles_data)
-
-        search_articles_results = None
-
-        if search_articles_response['results']:
-            search_articles_list = search_articles_response['results']
-            search_articles_results = process_articles_results(search_articles_list)
-
-
-    return search_articles_results
