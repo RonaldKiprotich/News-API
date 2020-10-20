@@ -21,6 +21,15 @@ def general():
 
     return render_template('general.html',title = title, generals = generals) 
 
+@main.route('/entertainment/')
+def entertainment():
+    
+    entertainment = get_articles("entertainment")
+
+    title = 'Entertainment News.'
+
+    return render_template('entertainment.html',title = title, entertainment = entertainment) 
+
 
 @main.route('/newsarticle/<id>')
 def newsarticle(id):
