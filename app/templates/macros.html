@@ -26,7 +26,7 @@
               <h5 class="card-title text-center">{{article.title}}</h5>
               <p class="card-text">{{article.description|truncate(50)}}</p>
               
-              <p>Date published:{{article.publishedAt.strftime('%y-%m-%d')}}</p>
+              <p>Date published:{{article.publishedAt}}</p>
             </div>
             <div class="card-footer" >
                 <a href="{{article.url}}" class="btn btn-primary" target="_blank">View Article</a>
