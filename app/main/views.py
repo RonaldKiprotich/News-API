@@ -6,11 +6,11 @@ from . import main
 @main.route('/')
 def index():
     
-    business = getSources('business')
+    news = getSources()
 
     title = 'Home, News Highlights'
 
-    return render_template('index.html',title = title, business = business) 
+    return render_template('index.html',title = title, news = news) 
 
 
 

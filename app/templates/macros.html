@@ -11,3 +11,34 @@
     </div>
         {% endfor %}
 {% endmacro %}
+
+{% macro displayNewsList(source_list) %}
+    {%for source in source_list %}
+    <div class="col-xs-12 col-sm-4 col-md-3 pt-3">
+        <div class="card">
+            <h5 class="card-header">{{source.name}}</h5>
+            <div class="card-body">
+              <p class="card-text">{{source.description|truncate(50)}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{source.url}}" class="btn btn-primary" target="_blank">Read More</a>
+            </div>
+          </div>
+    </div>
+        {% endfor %}
+{% endmacro %}
+
+{% macro displayArticlesList(articles_list) %}
+    {%for source in source_list %}
+    <div class="col-xs-12 col-sm-4 col-md-3 pt-3">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+        {% endfor %}
+{% endmacro %}

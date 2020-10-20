@@ -1,5 +1,6 @@
 import urllib.request,json
 from .models import Source,Article
+import requests
 
 api_key = None
 source_url = None
@@ -15,19 +16,17 @@ def configure_request(app):
     base_article_url = app.config["ARTICLES_API_BASE_URL"]
 
 
-def getSources(category):
+def getSources():
 
-    getSourcesURL = source_url.format(category,api_key)
-  
-    with urllib.request.urlopen(getSourcesURL) as url:
-        getSourcesData = url.read()
-        getSourcesResponse = json.loads(getSourcesData)
+    getSourcesURL = source_url.format(api_key)
 
-        sourcesResults = None 
+    getSourcesResponse =requests.get(getSourcesURL).json()
 
-        if getSourcesResponse['sources']:
-            sourcesResultsList = getSourcesResponse['sources']
-            sourcesResults = processSources(sourcesResultsList)
+    sourcesResults = None 
+
+    if getSourcesResponse['sources']:
+        sourcesResultsList = getSourcesResponse['sources']
+        sourcesResults = processSources(sourcesResultsList)
 
     return sourcesResults        
 
@@ -53,16 +52,13 @@ def get_articles(id):
     Function that gets the json Articles response to our url request
     """
     get_articles_url = base_article_url.format(id,api_key)
+    get_articles_response = requests.get(get_articles_url).json()
 
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response = json.loads(get_articles_data)
+    articles_results = None
 
-        articles_results = None
-
-        if get_articles_response['articles']:
-            articles_results_list = get_articles_response['articles']
-            articles_results = process_articles_results(articles_results_list)
+    if get_articles_response['articles']:
+        articles_results_list = get_articles_response['articles']
+        articles_results = process_articles_results(articles_results_list)
 
     return articles_results
 

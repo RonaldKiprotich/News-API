@@ -2,9 +2,12 @@
 {% import 'macros.html' as macro %}
 
   {% block content %}
-  <div>
-    <h3>Business</h3>
-  {{macro.displayArticlesList(business)}}
+  <div class="container">
+    <h3>{{title}}</h3>
+    <div class="row">
+      
+      {{macro.displayNewsList(news)}}
+    </div>
   </div>
 
   {% endblock%}
