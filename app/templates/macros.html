@@ -1,16 +1,5 @@
 
-{% macro displayArticlesList(articles_list) %}
-    {%for articles in articles_list %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 articles-card">
-        <img src="{{ articles.urlToImage }}" alt="{{ articles.title }} poster" class="img-responsive">
-        <li class="text-center">
-            <a href="/articles/{{articles.id}}" target="_blank" >
-              {{ articles.description|truncate(10)}}
-            </a>
-        </li>
-    </div>
-        {% endfor %}
-{% endmacro %}
+
 
 {% macro displayNewsList(source_list) %}
     {%for source in source_list %}
@@ -29,14 +18,18 @@
 {% endmacro %}
 
 {% macro displayArticlesList(articles_list) %}
-    {%for source in source_list %}
+    {%for article in articles_list%}
     <div class="col-xs-12 col-sm-4 col-md-3 pt-3">
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{article.urlToImage}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">{{article.title}}</h5>
+              <p class="card-text">{{article.description|truncate(50)}}</p>
+              <h3>Author:{{article.author}}</h3>
+              <p>Date published:{{article.publishedAt}}</p>
+            </div>
+            <div class="card-footer" >
+                <a href="{{article.url}}" class="btn btn-primary" target="_blank">View Article</a>
             </div>
           </div>
     </div>

@@ -47,11 +47,11 @@ def processSources(sourceLists):
 
     return sourcesResults
 
-def get_articles(id):
+def get_articles(category):
     """
     Function that gets the json Articles response to our url request
     """
-    get_articles_url = base_article_url.format(id,api_key)
+    get_articles_url = base_article_url.format(category,api_key)
     get_articles_response = requests.get(get_articles_url).json()
 
     articles_results = None
@@ -80,7 +80,7 @@ def process_articles_results(articles_list):
         content = article_item.get('content')
 
         if urlToImage:
-            article_object = Articles(id, title, author, description, url, urlToImage, publishedAt, content)
+            article_object = Article(id, title, author, description, url, urlToImage, publishedAt, content)
             articles_results.append(article_object)
 
     return articles_results
