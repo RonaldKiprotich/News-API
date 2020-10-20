@@ -42,12 +42,8 @@ Users can do the following with this App
 * Flask
 
 
-## LICENSE
-* 
-### License
-
-* LICENSED UNDER  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license/MIT)
-* Copyright (c) || 2020 [Ronald Kiprotich](https://github.com/RonaldKiprotich)
-
-
+## Support and contact details
+ Incase you come across errors, have questions, ideas ,concerns, or want to contribute to the application, feel free to reach me at :protich12@gmail.com
+## License
+[MIT](https://github.com/RonaldKiprotich/source-info/blob/master/LICENSE)
 
