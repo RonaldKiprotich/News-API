@@ -79,7 +79,7 @@ def process_articles_results(articles_list):
         publishedAt = article_item.get('publishedAt')
         content = article_item.get('content')
 
-        if urlToImage:
+        if urlToImage and author:
             article_object = Article(id, title, author, description, url, urlToImage, publishedAt, content)
             articles_results.append(article_object)
 
