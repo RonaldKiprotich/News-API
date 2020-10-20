@@ -18,12 +18,12 @@ Users can do the following with this App
   | BEHAVIOUR                | INPUT                     | OUTPUT                             |
   | ----------------------|:--------------------------:|:---------------------------------:|
   | Action required      | User clicks "Read More"  | Full article is displayed   |
-  | Search     | User searches an article  | articles that match the search are displayed   |
+  | Action required  | User clicks on the categories on the navbar  | articles are displayed   |
 
 
 
 ## Installation Requirements
-* Python3.6
+* Python3.8
 
 
 # If you want to contribute;
@@ -31,9 +31,9 @@ Users can do the following with this App
 * Change directory to your Application.
 *Add changes and save.  
  * Test the App:
-    python3.6 manage.py test
+    python3.8 manage.py test
 * Run the App:
-    python3.6 manage.py server
+    python3.8 manage.py server
 
 ## Technologies Used
 * Python3.8
