@@ -30,6 +30,15 @@ def entertainment():
 
     return render_template('entertainment.html',title = title, entertainment = entertainment) 
 
+@main.route('/sports/')
+def sports():
+    
+    sports = get_articles("sports")
+
+    title = 'Sports News.'
+
+    return render_template('sports.html',title = title, sports = sports) 
+
 
 @main.route('/newsarticle/<id>')
 def newsarticle(id):
